@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}<title>group_list.html</title>{% endblock %}
+{% block content %}
+<h2>{{ text }}</h2>
+<a class="navbar-brand" href="{% url 'posts:groups' slug %}"> group</a>
+{% endblock %}
