@@ -1,6 +1,25 @@
 {% extends 'base.html' %}
-{% block title %}<title>group_list.html</title>{% endblock %}
+{% block title %}<title>Записи сообщества Лев Толстой – зеркало русской
+    революции.</title>{% endblock %}
 {% block content %}
-<h2>{{ text }}</h2>
-<a class="navbar-brand" href="{% url 'posts:groups' slug %}"> group</a>
+<h1>Лев Толстой – зеркало русской революции.</h1>
+<p>
+    Группа тайных поклонников графа.
+</p>
+{% for post in posts %}
+<article>
+    <ul>
+        <li>
+            Автор: {{ post.author.get_full_name }}
+        </li>
+        <li>
+            Дата публикации: {{ post.pub_date }}
+        </li>
+    </ul>
+    <p>
+        {{ post.text }}
+    </p>
+</article>
+<hr>
+{% endfor %}
 {% endblock %}
