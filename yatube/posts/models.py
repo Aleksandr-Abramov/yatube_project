@@ -15,7 +15,7 @@ class Post(models.Model):
     group = models.ForeignKey('group',
                               on_delete=models.CASCADE,
                               blank=True, null=True,
-                              )
+                              related_name='group_post')
 
     def __str__(self):
         return self.text

@@ -9,7 +9,6 @@ def index(request):
 
     context = {
         'posts': posts,
-        'slug': 'slug',
     }
     return render(request, template, context)
 

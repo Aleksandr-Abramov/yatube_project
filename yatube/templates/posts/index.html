@@ -4,16 +4,16 @@
 <h1>Последние обновления на сайте</h1>
 {% for post in posts %}
 <article>
-<ul>
-    <li>
-        Автор: {{ post.author.get_full_name }}
-    </li>
-    <li>
-        Дата публикации: {{ post.pub_date|date:"d E Y" }}
-    </li>
-</ul>
-<p>{{ post.text }}</p>
-  <a href="{% url 'posts:groups' %}">все записи группы</a>
+    <ul>
+        <li>
+            Автор: {{ post.author.get_full_name }}
+        </li>
+        <li>
+            Дата публикации: {{ post.pub_date|date:"d E Y" }}
+        </li>
+    </ul>
+    <p>{{ post.text }}</p>
+    <a href="{% url 'posts:groups' post.group.slug  %}">все записи группы</a>
 </article>
 <hr>
 {% if not forloop.last %}
