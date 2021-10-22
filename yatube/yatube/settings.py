@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'posts.apps.PostsConfig',
     'users.apps.UsersConfig',
+    'about.apps.AboutConfig',
     'core.apps.CoreConfig',
 
 ]
@@ -132,3 +133,7 @@ LOGIN_REDIRECT_URL = 'posts:index'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# указываем директорию, в которую будут складываться файлы писем
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
